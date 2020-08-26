@@ -9,12 +9,19 @@
 
 
 3.times do |i|
-  store_seed = Store.create(name: Faker::Commerce.department,
-   description: Faker::Company.catch_phrase)
+  store_seed = Store.create(
+    name: Faker::Commerce.department,
+    description: Faker::Company.catch_phrase
+  )
 end
 
 
-3.times do |i|
-  store_seed.items.create(name: Faker::Commerce.product_name,
-   description: Faker::Commerce.material, price: Faker::Commerce.price)
+Store.all.each do |store|
+  3.times do
+    store.items.create(
+      name: Faker::Commerce.product_name, 
+      description: Faker::Commerce.material, 
+      price: Faker::Commerce.price
+    )
+  end
 end

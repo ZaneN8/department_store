@@ -11,8 +11,6 @@ class StoresController < ApplicationController
 
   def new
     @store = Store.new
-    @url = "/path"
-    @method  = :post
     render partial: "form" 
 
   end
@@ -21,7 +19,7 @@ class StoresController < ApplicationController
     @store = Store.new(store_params)
 
     if @store.save
-      redirect_to store_path
+      redirect_to stores_path
     else
       render :new
     end

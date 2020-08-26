@@ -12,37 +12,39 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = @store.item.new
+    @item = @store.items.new
+    render partial: "form"
   end
 
   def create
-    @item = @store.item.new(item_params)
+    @item = @store.items.new(item_params)
 
     if @item.save
-      redirect_item
+      redirect_to store_item_path(@store, @item)
     else
       render :new
     end
   end
 
   def edit
-    @item = @store.item.find(params[:id])
+    @item = @store.items.find(params[:id])
+    render partial: "form"
   end
 
   def update
-    @item = @store.item.find(params[:id])
+    @item = @store.items.find(params[:id])
 
     if @item.update(item_params)
-      redirect_item
+      redirect_to store_item_path(@store, @item)
     else
       render :edit
     end
   end
 
     def destroy
-      @item = @store.item.find(params[:id])
+      @item = @store.items.find(params[:id])
       @item.destroy
-      redirect_item
+      redirect_to store_path(@store)
     end
 
   private

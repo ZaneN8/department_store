@@ -1,0 +1,8 @@
+<h1><%= @item.id ? 'Edit Item' : 'Create New Item' %></h1>
+<hr />
+
+<%= form_for [@store, @item] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+<% end %>

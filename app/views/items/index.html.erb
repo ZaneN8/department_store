@@ -1,2 +1,9 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<h1>item name</h1>
+
+
+<%= link_to 'Add a new item to inventory', new_store_item_path(@store) %>
+<ul>
+  <% @items.each do |item| %>
+    <li><%= link_to item.name, [@store, item] %></li>
+  <% end %>
+</ul>

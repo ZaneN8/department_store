@@ -1,24 +1,21 @@
-# README
+BASIC OBJECTIVES:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Create a department model and an item model. (A department "has many" items for sale).
 
-Things you may want to cover:
+2. Using nested routes allow departments to have items.
 
-* Ruby version
+3. Create controllers for your two models that account for all CRUD actions.
 
-* System dependencies
+4. Create views for your models.
 
-* Configuration
+ 
 
-* Database creation
+BONUS OBJECTIVES:
 
-* Database initialization
+ 
 
-* How to run the test suite
+1. Add a comment model. (An item "has many" comments). Rework your routes accordingly.
 
-* Services (job queues, cache servers, search engines, etc.)
+2. Create a comment controller. Display comments when viewing an item.
 
-* Deployment instructions
-
-* ...
+3. Add custom styles in your *.scss file

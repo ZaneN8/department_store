@@ -13,4 +13,7 @@
 
   <%= f.submit %>
 
+  
 <% end %>
+
+<%= link_to 'Back', @item.id ? store_item_path(@store, @item) : store_path(@store)%>

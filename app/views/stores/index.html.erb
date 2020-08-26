@@ -1,2 +1,9 @@
-<h1>Stores#index</h1>
-<p>Find me in app/views/stores/index.html.erb</p>
+<h1>Click a Store to view items</h1>
+<%= link_to 'Create a new store department', new_store_path %>
+<ul>
+  <% @stores.each do |s| %>
+    <li><%= link_to s.name, s %></li>
+    <%= s.description %>
+    
+  <% end %>
+</ul>
